@@ -2,9 +2,8 @@ package cooloongwu.com.welcome;
 
 /**
  * 所有鸭子的父类
- *
+ * <p>
  * 经过改造后整合鸭子的行为，已飞行行为为例
- *
  */
 public abstract class Duck {
 
@@ -35,6 +34,12 @@ public abstract class Duck {
         //鸭子对象不亲自处理呱呱叫行为，而是委托给flyBehavior引用的对象
         flyBehavior.fly();
     }
+
+    //用设定方法来动态改变鸭子的行为
+    void setFlyBehavior(FlyBehavior flyBehavior) {
+        this.flyBehavior = flyBehavior;
+    }
+
     void show(String str) {
         System.out.println(str);
     }

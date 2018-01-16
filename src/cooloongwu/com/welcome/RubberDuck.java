@@ -43,7 +43,7 @@ package cooloongwu.com.welcome;
 public class RubberDuck extends Duck {
 
     public RubberDuck() {
-        flyBehavior = new FlyNoWay();
+        //flyBehavior = new FlyNoWay();
     }
 //
 //    @Override
