@@ -1,9 +1,16 @@
 package cooloongwu.com.welcome;
 
+/**
+ * 绿头鸭
+ */
 public class MallardDuck extends Duck {
 
-    @Override
-    void display() {
-        System.out.println("MallardDuck-display");
+    public MallardDuck() {
+        flyBehavior = new FlyWithWings();
     }
+
+//    @Override
+//    void display() {
+//        System.out.println("MallardDuck-display");
+//    }
 }

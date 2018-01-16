@@ -41,21 +41,26 @@ package cooloongwu.com.welcome;
  * 解决之道：采用良好的OO软件设计原则
  */
 public class RubberDuck extends Duck {
-    @Override
-    void quack() {
-        show("RubberDuck-quack");
-    }
 
-    @Override
-    void display() {
-        show("RubberDuck-display");
+    public RubberDuck() {
+        flyBehavior = new FlyNoWay();
     }
+//
+//    @Override
+//    void quack() {
+//        show("RubberDuck-quack");
+//    }
+//
+//    @Override
+//    void display() {
+//        show("RubberDuck-display");
+//    }
 
     /**
      * 橡皮鸭子是不会飞的，所以这里需要重写fly方法
      */
-    @Override
-    void fly() {
-        show("RubberDuck-no-fly");
-    }
+//    @Override
+//    void fly() {
+//        show("RubberDuck-no-fly");
+//    }
 }
