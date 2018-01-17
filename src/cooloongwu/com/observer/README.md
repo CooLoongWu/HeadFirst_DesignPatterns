@@ -25,4 +25,18 @@
 
 ### 设计原则：为了交互对象之间的松耦合设计而努力
 
+## Java的Observable
+
+### 使用方法
+1. 可观察者 继承 Observable，需要时使用setChanged()和notify的两个方法
+2. 观察者 实现 Observer，并将自身添加到Observable的对象中去。
+3. 观察者 复写 update() 方法，拉去或者直接得到所需数据
+
+### 注意事项
+1. Observable是一个类
+2. 通知次序会改变
+3. notifyObservers(arg)支持推送数据给观察者
+4. notifyObservers()支持观察者从可观察者对象中拉取数据
+
+
  
