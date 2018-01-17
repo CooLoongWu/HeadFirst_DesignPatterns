@@ -1,5 +1,7 @@
 package cooloongwu.com.observer;
 
+import java.util.ArrayList;
+
 /**
  * 天气测量数据类，返回包含温度，湿度，气压等数据
  * <p>
@@ -17,25 +19,34 @@ package cooloongwu.com.observer;
  * <p>
  * 而且update(params... par)看起来是一个统一的接口，都有共同的参数温度，湿度，气压
  */
-public class WeatherData {
+public class WeatherData implements Subject {
 
-    void getTemperature() {
+    private ArrayList observers;
+    private float temperature;
+    private float humidity;
+    private float pressure;
 
+    public WeatherData() {
+        observers = new ArrayList();
     }
 
-    void getHumidity() {
-
+    float getTemperature() {
+        return 111f;
     }
 
-    void getPressure() {
+    float getHumidity() {
+        return 222f;
+    }
 
+    float getPressure() {
+        return 333f;
     }
 
     /**
      * 一但气象测量更新，此方法会被调用（我们不在乎此方法是如何被调用的，我们只在乎他被调用了）
      */
     void measurementsChanged() {
-
+        notifyObservers();
     }
 
 
@@ -43,4 +54,31 @@ public class WeatherData {
 
     }
 
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        int i = observers.indexOf(observer);
+        if (i > 0) {
+            observers.remove(observer);
+        }
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (int i = 0; i < observers.size(); i++) {
+            Observer observer = (Observer) observers.get(i);
+            observer.update(temperature, humidity, pressure);
+        }
+    }
 }
