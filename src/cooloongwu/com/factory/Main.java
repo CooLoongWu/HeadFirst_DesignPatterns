@@ -5,7 +5,7 @@ public class Main {
 
         SimplePizzaFactory factory = new SimplePizzaFactory();
 
-        Pizza pizza = new PizzaStore(factory).orderPizza("");
+        Pizza pizza = new NYPizzaStore(factory).orderPizza("cheese");
 
     }
 }

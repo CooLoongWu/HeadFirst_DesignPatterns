@@ -1,6 +1,6 @@
 package cooloongwu.com.factory;
 
-public class PizzaStore {
+public abstract class PizzaStore {
 
     SimplePizzaFactory factory;
 
@@ -14,7 +14,7 @@ public class PizzaStore {
      * @param type 披萨类型
      * @return 披萨
      */
-    public Pizza orderPizza(String type) {
+    final public Pizza orderPizza(String type) {
         Pizza pizza;
 
 //        if (type.equals("cheese")) {
@@ -30,7 +30,7 @@ public class PizzaStore {
         /**
          * 利用工厂模式创建披萨
          */
-        pizza = factory.createPizza("");
+        pizza = createPizza(type);
 
         pizza.prepare();
         pizza.bake();
@@ -38,4 +38,6 @@ public class PizzaStore {
         pizza.box();
         return pizza;
     }
+
+    abstract Pizza createPizza(String type);
 }
