@@ -2,12 +2,6 @@ package cooloongwu.com.factory;
 
 public abstract class PizzaStore {
 
-    SimplePizzaFactory factory;
-
-    public PizzaStore(SimplePizzaFactory factory) {
-        this.factory = factory;
-    }
-
     /**
      * 从Pizza类中直接搬过来的，然后使用工厂创建披萨
      *
@@ -39,5 +33,5 @@ public abstract class PizzaStore {
         return pizza;
     }
 
-    abstract Pizza createPizza(String type);
+    protected abstract Pizza createPizza(String type);
 }

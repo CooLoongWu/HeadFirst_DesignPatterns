@@ -1,12 +1,18 @@
 package cooloongwu.com.factory;
 
+import java.util.ArrayList;
+
 /**
  * 基本的制作披萨类
  * <p>
  * 后期压力来自于增加更多的披萨类型或者要下架一些披萨类型
  */
-public class Pizza {
+public abstract class Pizza {
 
+    String name;
+    String dough;
+    String sauce;
+    ArrayList toppings = new ArrayList();
 //    /**
 //     * 根据披萨类型实例化具体的类
 //     *
@@ -38,18 +44,28 @@ public class Pizza {
 //    }
 
     void prepare() {
-        System.out.println("prepare...");
+        System.out.println("Preparing " + name);
+        System.out.println("Tossing dough...");
+        System.out.println("Adding sauce...");
+        System.out.println("Adding toppings:");
+        for (int i = 0; i < toppings.size(); i++) {
+            System.out.println("   " + toppings.get(i));
+        }
     }
 
     void bake() {
-        System.out.println("bake...");
+        System.out.println("Bake for 25 minutes at 350");
     }
 
     void cut() {
-        System.out.println("cut...");
+        System.out.println("Cutting the pizza into diagonal slices");
     }
 
     void box() {
-        System.out.println("box...");
+        System.out.println("Place pizza in official PizzaStore box");
+    }
+
+    public String getName() {
+        return name;
     }
 }

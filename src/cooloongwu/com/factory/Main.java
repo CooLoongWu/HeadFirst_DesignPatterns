@@ -3,9 +3,13 @@ package cooloongwu.com.factory;
 public class Main {
     public static void main(String[] args) {
 
-        SimplePizzaFactory factory = new SimplePizzaFactory();
+        //针对顾客本身实现，顾客定制披萨
+        PizzaStore nyStore = new NYPizzaStore();
+        Pizza nyPizza = nyStore.orderPizza("cheese");
+        System.out.println("a " + nyPizza.getName());
 
-        Pizza pizza = new NYPizzaStore(factory).orderPizza("cheese");
-
+        PizzaStore chicagoStore = new ChicagoPizzaStore();
+        Pizza chicagoPizza = chicagoStore.orderPizza("cheese");
+        System.out.println("a " + chicagoPizza.getName());
     }
 }

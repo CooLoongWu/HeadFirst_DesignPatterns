@@ -1,18 +1,18 @@
 package cooloongwu.com.factory;
 
-public class NYPizzaStore extends PizzaStore {
+public class ChicagoPizzaStore extends PizzaStore {
 
     @Override
     protected Pizza createPizza(String type) {
         Pizza pizza;
         if (type.equals("cheese")) {
-            pizza = new NYStyleCheesePizza();
+            pizza = new ChicagoStyleCheesePizza();
         } else if (type.equals("pepperoni")) {
-            pizza = new NYStyleCheesePizza();
+            pizza = new ChicagoStyleCheesePizza();
         } else if (type.equals("clam")) {
-            pizza = new NYStyleCheesePizza();
+            pizza = new ChicagoStyleCheesePizza();
         } else {
-            pizza = new NYStyleCheesePizza();
+            pizza = new ChicagoStyleCheesePizza();
         }
         return pizza;
     }
