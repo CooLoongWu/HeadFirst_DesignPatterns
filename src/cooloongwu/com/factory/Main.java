@@ -7,9 +7,5 @@ public class Main {
         PizzaStore nyStore = new NYPizzaStore();
         Pizza nyPizza = nyStore.orderPizza("cheese");
         System.out.println("a " + nyPizza.getName());
-
-        PizzaStore chicagoStore = new ChicagoPizzaStore();
-        Pizza chicagoPizza = chicagoStore.orderPizza("cheese");
-        System.out.println("a " + chicagoPizza.getName());
     }
 }
