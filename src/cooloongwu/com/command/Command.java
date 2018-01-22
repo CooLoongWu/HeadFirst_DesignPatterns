@@ -5,4 +5,9 @@ package cooloongwu.com.command;
  */
 public interface Command {
     public void execute();
+
+    /**
+     * 加入撤销功能
+     */
+    public void undo();
 }

@@ -5,4 +5,9 @@ public class NoCommand implements Command {
     public void execute() {
         System.out.println("Command-NoCommand");
     }
+
+    @Override
+    public void undo() {
+        System.out.println("Command-NoCommand");
+    }
 }

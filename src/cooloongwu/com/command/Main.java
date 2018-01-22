@@ -25,5 +25,6 @@ public class Main {
 
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
+        remoteControl.undoButtonWasPushed();
     }
 }
