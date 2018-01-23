@@ -12,16 +12,37 @@ public class Main {
 //        control.buttonWasPressed();
 
 
+        /**
+         * 撤销操作
+         */
+//        RemoteControl remoteControl = new RemoteControl();
+//
+//        Light light = new Light();
+//
+//        LightOnCommand lightOnCommand = new LightOnCommand(light);
+//        LightOffCommand lightOffCommand = new LightOffCommand(light);
+//
+//        remoteControl.setCommand(0, lightOnCommand, lightOffCommand);
+//        System.out.println(remoteControl);
+//
+//
+//        remoteControl.onButtonWasPushed(0);
+//        remoteControl.offButtonWasPushed(0);
+//        remoteControl.undoButtonWasPushed();
+
+        /**
+         * 带有状态的撤销操作
+         */
         RemoteControl remoteControl = new RemoteControl();
+        CeilingFan ceilingFan = new CeilingFan("Living Room");
 
-        Light light = new Light();
+        CeilingFanHighCommand highCommand = new CeilingFanHighCommand(ceilingFan);
+        CeilingFanLowCommand lowCommand = new CeilingFanLowCommand(ceilingFan);
+        CeilingFanOffCommand offCommand = new CeilingFanOffCommand(ceilingFan);
+        remoteControl.setCommand(0, highCommand, offCommand);
+        remoteControl.setCommand(1, lowCommand, offCommand);
 
-        LightOnCommand lightOnCommand = new LightOnCommand(light);
-        LightOffCommand lightOffCommand = new LightOffCommand(light);
-
-        remoteControl.setCommand(0, lightOnCommand, lightOffCommand);
         System.out.println(remoteControl);
-
 
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
