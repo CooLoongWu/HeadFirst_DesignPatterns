@@ -3,28 +3,16 @@ package cooloongwu.com.template;
 /**
  * 咖啡类，用来煮咖啡
  */
-public class Coffee {
+public class Coffee extends CaffeineBeverage {
 
-    void prepareRecipe() {
-        boilWater();
-        brewCoffeeGrinds();
-        pourInCup();
-        addSugatAndMilk();
+    @Override
+    protected void addCondiments() {
+        System.out.println("Adding Sugar and Milk");
     }
 
-    public void boilWater() {
-        System.out.println("Boiling water");
-    }
-
-    public void brewCoffeeGrinds() {
+    @Override
+    protected void brew() {
         System.out.println("Dripping Coffee through filter");
     }
 
-    public void pourInCup() {
-        System.out.println("Pouring into cup");
-    }
-
-    public void addSugatAndMilk() {
-        System.out.println("Adding Sugar and Milk");
-    }
 }
