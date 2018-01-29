@@ -7,11 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
         PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-        ArrayList<MenuItem> breakfastItems = pancakeHouseMenu.getMenuItems();
+//        ArrayList<MenuItem> breakfastItems = pancakeHouseMenu.getMenuItems();
 
         DinerMenu dinerMenu = new DinerMenu();
-        MenuItem[] menuItems = dinerMenu.getMenuItems();
+//        MenuItem[] menuItems = dinerMenu.getMenuItems();
 
+        CafeMenu cafeMenu = new CafeMenu();
 //
 //        for (int i = 0; i < breakfastItems.size(); i++) {
 //            MenuItem menuItem = breakfastItems.get(i);
@@ -36,6 +37,7 @@ public class Main {
 //            }
 //        }
 
+        printMenu(cafeMenu.createIterator());
         printMenu(pancakeHouseMenu.createIterator());
         printMenu(dinerMenu.createIterator());
     }
