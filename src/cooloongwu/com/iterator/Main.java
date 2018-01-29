@@ -1,6 +1,7 @@
 package cooloongwu.com.iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Main {
 
@@ -35,6 +36,7 @@ public class Main {
 //            }
 //        }
 
+        printMenu(pancakeHouseMenu.createIterator());
         printMenu(dinerMenu.createIterator());
     }
 

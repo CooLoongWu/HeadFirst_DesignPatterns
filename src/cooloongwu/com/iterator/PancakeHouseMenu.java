@@ -1,6 +1,7 @@
 package cooloongwu.com.iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PancakeHouseMenu {
 
@@ -40,6 +41,15 @@ public class PancakeHouseMenu {
                 price);
 
         menuItems.add(menuItem);
+    }
+
+    /**
+     * arrayList自带迭代器方法
+     *
+     * @return 迭代
+     */
+    public Iterator createIterator() {
+        return menuItems.iterator();
     }
 
     public ArrayList<MenuItem> getMenuItems() {
