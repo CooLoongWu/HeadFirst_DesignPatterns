@@ -3,7 +3,7 @@ package cooloongwu.com.iterator;
 import java.util.Hashtable;
 import java.util.Iterator;
 
-public class CafeMenu implements Menu {
+public class CafeMenu {
 
     Hashtable menuItems = new Hashtable();
 
@@ -29,10 +29,10 @@ public class CafeMenu implements Menu {
         return menuItems;
     }
 
-
-    @Override
-    public Iterator createIterator() {
-        return menuItems.values().iterator();
-    }
+//
+//    @Override
+//    public Iterator createIterator() {
+//        return menuItems.values().iterator();
+//    }
 
 }

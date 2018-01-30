@@ -1,5 +1,6 @@
 package cooloongwu.com.iterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
@@ -7,9 +8,22 @@ import java.util.Iterator;
  */
 public class Waitress {
 
+    ArrayList menus;
+    MenuComponent allMenus;
+
     private Menu dinerMenu;
     private Menu cafeMenu;
     private Menu pancakeHouseMenu;
+
+    public Waitress(MenuComponent allMenus) {
+        this.allMenus = allMenus;
+    }
+
+
+    public Waitress(ArrayList menus) {
+        this.menus = menus;
+    }
+
 
     public Waitress(Menu dinerMenu,
                     Menu cafeMenu,
@@ -20,17 +34,25 @@ public class Waitress {
     }
 
     public void printMenu() {
-        Iterator dinerIterator = dinerMenu.createIterator();
-        Iterator cafeIterator = cafeMenu.createIterator();
-        Iterator pancakeHouseIterator = pancakeHouseMenu.createIterator();
+//        Iterator dinerIterator = dinerMenu.createIterator();
+//        Iterator cafeIterator = cafeMenu.createIterator();
+//        Iterator pancakeHouseIterator = pancakeHouseMenu.createIterator();
+//
+//        System.out.println("MENU\n");
+//        System.out.println("CAFE\n");
+//        printMenu(cafeIterator);
+//        System.out.println("DINER\n");
+//        printMenu(dinerIterator);
+//        System.out.println("PANCAKE\n");
+//        printMenu(pancakeHouseIterator);
 
-        System.out.println("MENU\n");
-        System.out.println("CAFE\n");
-        printMenu(cafeIterator);
-        System.out.println("DINER\n");
-        printMenu(dinerIterator);
-        System.out.println("PANCAKE\n");
-        printMenu(pancakeHouseIterator);
+//        Iterator iterator = menus.iterator();
+//        while (iterator.hasNext()) {
+//            Menu menu = (Menu) iterator.next();
+//            printMenu(menu.createIterator());
+//        }
+
+        allMenus.print();
     }
 
     private void printMenu(Iterator iterator) {

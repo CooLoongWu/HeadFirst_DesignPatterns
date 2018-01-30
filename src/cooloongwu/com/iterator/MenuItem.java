@@ -1,6 +1,6 @@
 package cooloongwu.com.iterator;
 
-public class MenuItem {
+public class MenuItem extends MenuComponent {
 
     String name;
     String description;
@@ -39,5 +39,14 @@ public class MenuItem {
 
     public double getPrice() {
         return price;
+    }
+
+    public void print() {
+        System.out.println("" + getName());
+        if (isVegetarian()) {
+            System.out.println("(V)");
+        }
+        System.out.println(getPrice());
+        System.out.println(getDescription());
     }
 }

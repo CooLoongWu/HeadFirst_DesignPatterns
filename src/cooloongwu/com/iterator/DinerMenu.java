@@ -2,7 +2,7 @@ package cooloongwu.com.iterator;
 
 import java.util.Iterator;
 
-public class DinerMenu implements Menu {
+public class DinerMenu {
 
     static final int MAX_ITEMS = 6;
 
@@ -52,8 +52,8 @@ public class DinerMenu implements Menu {
         return menuItems;
     }
 
-    @Override
-    public Iterator createIterator() {
-        return new DinerMenuIterator(menuItems);
-    }
+//    @Override
+//    public Iterator createIterator() {
+//        return new DinerMenuIterator(menuItems);
+//    }
 }

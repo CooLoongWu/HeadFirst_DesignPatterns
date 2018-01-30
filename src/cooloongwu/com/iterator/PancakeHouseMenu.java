@@ -3,7 +3,7 @@ package cooloongwu.com.iterator;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class PancakeHouseMenu implements Menu {
+public class PancakeHouseMenu {
 
     ArrayList<MenuItem> menuItems;
 
@@ -48,10 +48,10 @@ public class PancakeHouseMenu implements Menu {
      *
      * @return 迭代
      */
-    @Override
-    public Iterator createIterator() {
-        return menuItems.iterator();
-    }
+//    @Override
+//    public Iterator createIterator() {
+//        return menuItems.iterator();
+//    }
 
     public ArrayList<MenuItem> getMenuItems() {
         return menuItems;
