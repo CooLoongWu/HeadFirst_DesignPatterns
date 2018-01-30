@@ -55,4 +55,10 @@ public class Menu extends MenuComponent {
 
         System.out.println("----------");
     }
+
+    @Override
+    public Iterator createIterator() {
+        //这里使用一个新的迭代器，该迭代器知道如何遍历任何组合。
+        return new CompositeIterator(menuComponents.iterator());
+    }
 }

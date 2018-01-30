@@ -65,4 +65,23 @@ public class Waitress {
             System.out.println("=========================");
         }
     }
+
+    public void printVegetarianMenu() {
+        Iterator iterator = allMenus.createIterator();
+        System.out.println("VEGETARIAN MENU");
+
+        while (iterator.hasNext()) {
+            MenuComponent menuComponent = (MenuComponent) iterator.next();
+
+            try {
+                //Menu会抛出一个异常，因为Menu不支持这个操作。
+                if (menuComponent.isVegetarian()) {
+                    menuComponent.print();
+                }
+            } catch (UnsupportedOperationException e) {
+                //e.printStackTrace();
+            }
+
+        }
+    }
 }
