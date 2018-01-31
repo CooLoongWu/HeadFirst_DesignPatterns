@@ -1,6 +1,10 @@
 package cooloongwu.com.state;
 
+import java.util.Random;
+
 public class HasQuarterState implements State {
+
+    Random randomWinner = new Random(System.currentTimeMillis());
 
     GumballMachine machine;
 
@@ -23,7 +27,12 @@ public class HasQuarterState implements State {
     @Override
     public void turnCrank() {
         System.out.println("You turned...");
-        machine.setState(machine.getSoldState());
+        int winner = randomWinner.nextInt();
+        if (winner == 0 && machine.getCount() > 1) {
+            machine.setState(machine.getSoldOutState());
+        } else {
+            machine.setState(machine.getSoldState());
+        }
     }
 
     @Override
