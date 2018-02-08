@@ -1,4 +1,4 @@
-package cooloongwu.com.welcome;
+package cooloongwu.com.strategy;
 
 /**
  * 绿头鸭

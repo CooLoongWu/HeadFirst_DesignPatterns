@@ -1,4 +1,4 @@
-package cooloongwu.com.welcome;
+package cooloongwu.com.strategy;
 
 public class FlyNoWay implements FlyBehavior {
     @Override
