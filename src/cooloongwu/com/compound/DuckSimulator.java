@@ -17,13 +17,39 @@ public class DuckSimulator {
 
         Quackable gooseDuck = new GooseAdapter(new Goose());
 
-        System.out.println("Duck Simulator : With Abstract Factory");
-        simulate(mallardDuck);
-        simulate(redheadDuck);
-        simulate(duckCall);
-        simulate(rubberDuck);
-        simulate(gooseDuck);
+//        System.out.println("Duck Simulator : With Abstract Factory");
+//        simulate(mallardDuck);
+//        simulate(redheadDuck);
+//        simulate(duckCall);
+//        simulate(rubberDuck);
+//        simulate(gooseDuck);
+//        System.out.println("\nThe ducks quacked " + QuackCounter.getNumberOfQuacks() + " times");
+
+        System.out.println("Duck Simulator : With Composite - Flocks");
+        Flock flockOfDucks = new Flock();
+        flockOfDucks.add(redheadDuck);
+        flockOfDucks.add(duckCall);
+        flockOfDucks.add(rubberDuck);
+        flockOfDucks.add(gooseDuck);
+
+        //绿头鸭群
+        Flock flockOfMallards = new Flock();
+        flockOfMallards.add(duckFactory.createMallardDuck());
+        flockOfMallards.add(duckFactory.createMallardDuck());
+        flockOfMallards.add(duckFactory.createMallardDuck());
+        flockOfMallards.add(duckFactory.createMallardDuck());
+        flockOfMallards.add(duckFactory.createMallardDuck());
+
+        flockOfDucks.add(flockOfMallards);
+
+        System.out.println("\nDucks simulator : Whole Flock Simulation");
+        simulate(flockOfDucks);
+
+        System.out.println("Duck Simulator : Mallard Flock Simulation");
+        simulate(flockOfMallards);
+
         System.out.println("\nThe ducks quacked " + QuackCounter.getNumberOfQuacks() + " times");
+
     }
 
     private void simulate() {
@@ -43,6 +69,7 @@ public class DuckSimulator {
         simulate(rubberDuck);
         simulate(gooseDuck);
 
+        //最后统计出来叫声少一次，因为鹅的叫声是不计数的
         System.out.println("\nThe ducks quacked " + QuackCounter.getNumberOfQuacks() + " times");
     }
 
